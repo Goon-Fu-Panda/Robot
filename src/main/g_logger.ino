@@ -28,7 +28,6 @@ bool globale_logger::error(String invoer) {
 };
 bool globale_logger::fatal(String invoer) {
     logger("[CRASH]:",invoer);
-    buzzer.playFrequency(800, 500, 20);
-    buzzer.playFrequency(400, 500, 20);
+    buzzer.play("V3 EC");
 
 };
