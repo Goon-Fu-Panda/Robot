@@ -2,10 +2,12 @@
 
 globale_logger::globale_logger() {
   Serial.begin(9600);
+  while (!Serial) {}
   info("Logger is geinistaliseerd: BUADRATE is 9600");
 };
 globale_logger::globale_logger(unsigned long UART_Speed) {
   Serial.begin(UART_Speed);
+  while (!Serial) {}
   info("Logger is geinistaliseerd: "+UART_Speed);
 };
 bool globale_logger::logger(String level,String invoer) {
