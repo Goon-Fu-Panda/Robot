@@ -14,6 +14,9 @@ IDE (integrated development environment) opstellen
 Documentatie voor de library ZumoShield
 - https://pololu.github.io/zumo-shield-arduino-library/
 
+Componenten van de zumo robot
+- https://www.pololu.com/docs/0J57/3.a
+
 
 ## Voorbeelden
 
