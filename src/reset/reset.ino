@@ -1,6 +1,3 @@
-#include <Wire.h>
-#include <ZumoShield.h>
-
 void setup() {
   // put your setup code here, to run once:
 
