@@ -1,4 +1,6 @@
 #include "g_logger.h"
+#include <Wire.h>
+#include <Zumo32U4.h>
 
 globale_logger logger;
 void setup() {

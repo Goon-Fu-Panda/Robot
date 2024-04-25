@@ -1,5 +1,7 @@
 #ifndef g_logger_h
 #define g_logger_h
+#include <Zumo32U4Buzzer.h>
+
 
 class globale_logger {
   public:
@@ -12,6 +14,7 @@ class globale_logger {
 
   private:
     bool logger(String level,String invoer);
+    Zumo32U4Buzzer buzzer;
 };
 
 #endif
