@@ -11,9 +11,13 @@ void setup() {
   logger.warn("WARN");
   logger.error("ERROR");
   logger.fatal("CRASH");
+  // Zumo32U4Motors().setSpeeds(60, 60);
 
 }
 
 void loop() {
+  if (Zumo32U4ButtonA().isPressed() == true) {
+    logger.fatal("aasasadasas");
+  }
   // put your main code here, to run repeatedly:
 }
