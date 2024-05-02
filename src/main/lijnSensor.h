@@ -6,6 +6,7 @@ class lijnSensor: public Zumo32U4LineSensors  {
   public:
     lijnSensor();
     ~lijnSensor();
+    void lees(unsigned int *);
   private:
     unsigned int *SensorWaardes;
     unsigned char SensorAantal;
