@@ -5,11 +5,14 @@
 class lijnSensor: public Zumo32U4LineSensors  {
   public:
     lijnSensor();
+    lijnSensor(unsigned char *, unsigned char , unsigned int, unsigned char);
     ~lijnSensor();
-    void lees(unsigned int *);
+    int afwijkingLijn(unsigned int *);
+    bool aanwezigheidLijn(unsigned int *);
+
   private:
-    unsigned int *SensorWaardes;
-    unsigned char SensorAantal;
+    unsigned int sensorAantal;
+    int sensorError;
 
 };
 
