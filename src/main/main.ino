@@ -7,7 +7,6 @@ lijnSensor lijn;
 unsigned int lijnWaardes[3]= {20,20,20};
 xbee xbees;
 void setup() {
-
 }
 
 void loop() {

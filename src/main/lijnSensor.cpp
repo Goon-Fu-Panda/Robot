@@ -2,16 +2,25 @@
 #include "lijnSensor.h"
 #include <Zumo32U4.h>
 
-
+/*
+  de standaard constructor voor deze classen nemen aan dat er 3 sensoren zijn.
+  als dit niet zo is zall er invoer nodig zijn om de classe correct op te stellen
+*/
 lijnSensor::lijnSensor(): Zumo32U4LineSensors(), sensorAantal(3), sensorError(0) {
   Zumo32U4LineSensors::initThreeSensors(SENSOR_LEDON);
 };
 
+/*
+  dit is de alternative constuctor.
+  deze zal wanneer er correct invoer wordt geven volgens de spec van de qtrSensor worden opgestelt.
+  https://pololu.github.io/qtr-sensors-arduino/_q_t_r_sensors_8h.html
+*/
 lijnSensor::lijnSensor(uint8_t *pins, uint8_t numSensors, uint16_t timeout = 2000, uint8_t emitterPin = SENSOR_LEDON): Zumo32U4LineSensors(), sensorAantal(numSensors), sensorError(0) {
   Zumo32U4LineSensors::init(pins, numSensors, timeout,emitterPin);
 };
 
 lijnSensor::~lijnSensor() {
+
 };
 
 /* 
@@ -42,5 +51,4 @@ bool lijnSensor::aanwezigheidLijn(unsigned int *sensorInvoer) {
       return 0;
     }
   }
-
 }
