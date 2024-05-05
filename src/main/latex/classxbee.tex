@@ -1,0 +1,65 @@
+\doxysection{xbee Class Reference}
+\hypertarget{classxbee}{}\label{classxbee}\index{xbee@{xbee}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classxbee_a524440833ff50c0e1752a405b8fbd1f6}{xbee}} ()
+\item 
+\mbox{\hyperlink{classxbee_af53f24e6038120db9984f5f4f8abecff}{xbee}} (int)
+\item 
+\mbox{\hyperlink{classxbee_a933410b267b5dc30acb860344f975fff}{\texorpdfstring{$\sim$}{\string~}xbee}} ()
+\item 
+void \mbox{\hyperlink{classxbee_af63c21830626a528136c88b19d45766c}{print\+Lijst}} (int \texorpdfstring{$\ast$}{*}array, unsigned int length)
+\item 
+void \mbox{\hyperlink{classxbee_ab719df3c7fd7e6a50beb8d008656b7b4}{print\+Hex}} (int)
+\item 
+void \mbox{\hyperlink{classxbee_abbec8f0739da809c8f8926736ce1ae8f}{print\+Bin}} (int)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classxbee_a524440833ff50c0e1752a405b8fbd1f6}\label{classxbee_a524440833ff50c0e1752a405b8fbd1f6} 
+\index{xbee@{xbee}!xbee@{xbee}}
+\index{xbee@{xbee}!xbee@{xbee}}
+\doxysubsubsection{\texorpdfstring{xbee()}{xbee()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily xbee\+::xbee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+dit start de seriale verbinding en zet het naar de standaard baudrate van 9600 hier mee word alle nodige systemen opgesteld \Hypertarget{classxbee_af53f24e6038120db9984f5f4f8abecff}\label{classxbee_af53f24e6038120db9984f5f4f8abecff} 
+\index{xbee@{xbee}!xbee@{xbee}}
+\index{xbee@{xbee}!xbee@{xbee}}
+\doxysubsubsection{\texorpdfstring{xbee()}{xbee()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily xbee\+::xbee (\begin{DoxyParamCaption}\item[{int}]{BUAD\+\_\+\+RATE }\end{DoxyParamCaption})}
+
+bij deze constuctuur kan je nodige connectie snelheden zetten zo nodig is. dit kan bijvoorbeeld handig zijn als je meer characters wil versturen. of als je minder vertragging wil hebben door de stuur tijd. \Hypertarget{classxbee_a933410b267b5dc30acb860344f975fff}\label{classxbee_a933410b267b5dc30acb860344f975fff} 
+\index{xbee@{xbee}!````~xbee@{\texorpdfstring{$\sim$}{\string~}xbee}}
+\index{````~xbee@{\texorpdfstring{$\sim$}{\string~}xbee}!xbee@{xbee}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}xbee()}{\string~xbee()}}
+{\footnotesize\ttfamily xbee\+::\texorpdfstring{$\sim$}{\string~}xbee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+om de Seriale verbinding correct aftesluiten. en geen problematische instantie te krijgen. wordt hier Serial . end op geroepen om alles correect af te sluiten. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classxbee_abbec8f0739da809c8f8926736ce1ae8f}\label{classxbee_abbec8f0739da809c8f8926736ce1ae8f} 
+\index{xbee@{xbee}!printBin@{printBin}}
+\index{printBin@{printBin}!xbee@{xbee}}
+\doxysubsubsection{\texorpdfstring{printBin()}{printBin()}}
+{\footnotesize\ttfamily void xbee\+::print\+Bin (\begin{DoxyParamCaption}\item[{int}]{input }\end{DoxyParamCaption})}
+
+Deze methode gebruikt de invoer en geeft het weer via de serial van de Xbee \Hypertarget{classxbee_ab719df3c7fd7e6a50beb8d008656b7b4}\label{classxbee_ab719df3c7fd7e6a50beb8d008656b7b4} 
+\index{xbee@{xbee}!printHex@{printHex}}
+\index{printHex@{printHex}!xbee@{xbee}}
+\doxysubsubsection{\texorpdfstring{printHex()}{printHex()}}
+{\footnotesize\ttfamily void xbee\+::print\+Hex (\begin{DoxyParamCaption}\item[{int}]{input }\end{DoxyParamCaption})}
+
+Deze methode is zeer simpel het pakt de geven invoer en drukt het uit via de Xbee. \Hypertarget{classxbee_af63c21830626a528136c88b19d45766c}\label{classxbee_af63c21830626a528136c88b19d45766c} 
+\index{xbee@{xbee}!printLijst@{printLijst}}
+\index{printLijst@{printLijst}!xbee@{xbee}}
+\doxysubsubsection{\texorpdfstring{printLijst()}{printLijst()}}
+{\footnotesize\ttfamily void xbee\+::print\+Lijst (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{array,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})}
+
+deze methode gebruikt de ingevoerde lengte om dat aantal keer door de array te gaan. !!! LET OP !!! als je een te grote lengthe geeft voor de array krijg je ongedefineerd gedrag. dit komt door dat de code door leest en print wat kan leiden tot een crash. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+xbee.\+h\item 
+xbee.\+cpp\end{DoxyCompactItemize}

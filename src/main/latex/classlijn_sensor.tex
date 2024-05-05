@@ -6,7 +6,48 @@ Inheritance diagram for lijn\+Sensor\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{classlijn_sensor}
 \end{center}
 \end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlijn_sensor_a3d9ef979219fdc517e6071ead64bd518}{lijn\+Sensor}} ()
+\item 
+\mbox{\hyperlink{classlijn_sensor_a5d0869a53365ead38e82a6390433cf5f}{lijn\+Sensor}} (unsigned char \texorpdfstring{$\ast$}{*}, unsigned char, unsigned int, unsigned char)
+\item 
+int \mbox{\hyperlink{classlijn_sensor_a7659da3e55a4ace103047d32b6fa40ca}{afwijking\+Lijn}} (unsigned int \texorpdfstring{$\ast$}{*})
+\item 
+bool \mbox{\hyperlink{classlijn_sensor_a73c709c81bf1ddc7e5474a8122e9d4b5}{aanwezigheid\+Lijn}} (unsigned int \texorpdfstring{$\ast$}{*})
+\end{DoxyCompactItemize}
 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classlijn_sensor_a3d9ef979219fdc517e6071ead64bd518}\label{classlijn_sensor_a3d9ef979219fdc517e6071ead64bd518} 
+\index{lijnSensor@{lijnSensor}!lijnSensor@{lijnSensor}}
+\index{lijnSensor@{lijnSensor}!lijnSensor@{lijnSensor}}
+\doxysubsubsection{\texorpdfstring{lijnSensor()}{lijnSensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily lijn\+Sensor\+::lijn\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+de standaard constructor voor deze classen nemen aan dat er 3 sensoren zijn. als dit niet zo is zall er invoer nodig zijn om de classe correct op te stellen \Hypertarget{classlijn_sensor_a5d0869a53365ead38e82a6390433cf5f}\label{classlijn_sensor_a5d0869a53365ead38e82a6390433cf5f} 
+\index{lijnSensor@{lijnSensor}!lijnSensor@{lijnSensor}}
+\index{lijnSensor@{lijnSensor}!lijnSensor@{lijnSensor}}
+\doxysubsubsection{\texorpdfstring{lijnSensor()}{lijnSensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily lijn\+Sensor\+::lijn\+Sensor (\begin{DoxyParamCaption}\item[{unsigned char \texorpdfstring{$\ast$}{*}}]{,  }\item[{unsigned char}]{,  }\item[{unsigned int}]{,  }\item[{unsigned char}]{ }\end{DoxyParamCaption})}
+
+dit is de alternative constuctor. deze zal wanneer er correct invoer wordt geven volgens de spec van de qtr\+Sensor worden opgestelt. \href{https://pololu.github.io/qtr-sensors-arduino/_q_t_r_sensors_8h.html}{\texttt{ https\+://pololu.\+github.\+io/qtr-\/sensors-\/arduino/\+\_\+q\+\_\+t\+\_\+r\+\_\+sensors\+\_\+8h.\+html}} 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classlijn_sensor_a73c709c81bf1ddc7e5474a8122e9d4b5}\label{classlijn_sensor_a73c709c81bf1ddc7e5474a8122e9d4b5} 
+\index{lijnSensor@{lijnSensor}!aanwezigheidLijn@{aanwezigheidLijn}}
+\index{aanwezigheidLijn@{aanwezigheidLijn}!lijnSensor@{lijnSensor}}
+\doxysubsubsection{\texorpdfstring{aanwezigheidLijn()}{aanwezigheidLijn()}}
+{\footnotesize\ttfamily bool lijn\+Sensor\+::aanwezigheid\+Lijn (\begin{DoxyParamCaption}\item[{unsigned int \texorpdfstring{$\ast$}{*}}]{sensor\+Invoer }\end{DoxyParamCaption})}
+
+we lopen door alle sensoren en kijken of het 0 is. En als dat zo is geven we 0 terug (dat deze niet aanwezig is). \Hypertarget{classlijn_sensor_a7659da3e55a4ace103047d32b6fa40ca}\label{classlijn_sensor_a7659da3e55a4ace103047d32b6fa40ca} 
+\index{lijnSensor@{lijnSensor}!afwijkingLijn@{afwijkingLijn}}
+\index{afwijkingLijn@{afwijkingLijn}!lijnSensor@{lijnSensor}}
+\doxysubsubsection{\texorpdfstring{afwijkingLijn()}{afwijkingLijn()}}
+{\footnotesize\ttfamily int lijn\+Sensor\+::afwijking\+Lijn (\begin{DoxyParamCaption}\item[{unsigned int \texorpdfstring{$\ast$}{*}}]{sensor\+Invoer }\end{DoxyParamCaption})}
+
+deze methode geeft de afwijking van de middelste sensor het zal een negatief getal terug geven wanneer het links zit. en positief als het er rechts van zit. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

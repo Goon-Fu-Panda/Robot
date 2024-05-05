@@ -4,13 +4,12 @@
 #include "xbee.h"
 
 lijnSensor lijn;
-unsigned int lijnWaardes[3]= {20,20,20};
-xbee xbees;
+unsigned int lijnWaardes[3]= {0,0,0};
+xbee xbeeRadio;
 void setup() {
 }
 
 void loop() {
-  
-  lijn.read(lijnWaardes);
+
 
 }

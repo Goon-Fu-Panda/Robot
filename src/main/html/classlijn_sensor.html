@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: lijnSensor Class Reference</title>
+<title>sensoren lennard: lijnSensor Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,7 +23,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">sensoren lennard
    </div>
   </td>
  </tr>
@@ -72,6 +72,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classlijn_sensor-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">lijnSensor Class Reference</div></div>
 </div><!--header-->
@@ -82,6 +83,106 @@ Inheritance diagram for lijnSensor:</div>
  <div class="center">
   <img src="classlijn_sensor.png" alt=""/>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a3d9ef979219fdc517e6071ead64bd518" id="r_a3d9ef979219fdc517e6071ead64bd518"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d9ef979219fdc517e6071ead64bd518">lijnSensor</a> ()</td></tr>
+<tr class="separator:a3d9ef979219fdc517e6071ead64bd518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0869a53365ead38e82a6390433cf5f" id="r_a5d0869a53365ead38e82a6390433cf5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d0869a53365ead38e82a6390433cf5f">lijnSensor</a> (unsigned char *, unsigned char, unsigned int, unsigned char)</td></tr>
+<tr class="separator:a5d0869a53365ead38e82a6390433cf5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7659da3e55a4ace103047d32b6fa40ca" id="r_a7659da3e55a4ace103047d32b6fa40ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7659da3e55a4ace103047d32b6fa40ca">afwijkingLijn</a> (unsigned int *)</td></tr>
+<tr class="separator:a7659da3e55a4ace103047d32b6fa40ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c709c81bf1ddc7e5474a8122e9d4b5" id="r_a73c709c81bf1ddc7e5474a8122e9d4b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73c709c81bf1ddc7e5474a8122e9d4b5">aanwezigheidLijn</a> (unsigned int *)</td></tr>
+<tr class="separator:a73c709c81bf1ddc7e5474a8122e9d4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3d9ef979219fdc517e6071ead64bd518" name="a3d9ef979219fdc517e6071ead64bd518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d9ef979219fdc517e6071ead64bd518">&#9670;&#160;</a></span>lijnSensor() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lijnSensor::lijnSensor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>de standaard constructor voor deze classen nemen aan dat er 3 sensoren zijn. als dit niet zo is zall er invoer nodig zijn om de classe correct op te stellen </p>
+
+</div>
+</div>
+<a id="a5d0869a53365ead38e82a6390433cf5f" name="a5d0869a53365ead38e82a6390433cf5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d0869a53365ead38e82a6390433cf5f">&#9670;&#160;</a></span>lijnSensor() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lijnSensor::lijnSensor </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char *</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>dit is de alternative constuctor. deze zal wanneer er correct invoer wordt geven volgens de spec van de qtrSensor worden opgestelt. <a href="https://pololu.github.io/qtr-sensors-arduino/_q_t_r_sensors_8h.html">https://pololu.github.io/qtr-sensors-arduino/_q_t_r_sensors_8h.html</a> </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a73c709c81bf1ddc7e5474a8122e9d4b5" name="a73c709c81bf1ddc7e5474a8122e9d4b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c709c81bf1ddc7e5474a8122e9d4b5">&#9670;&#160;</a></span>aanwezigheidLijn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lijnSensor::aanwezigheidLijn </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int *</td>          <td class="paramname"><span class="paramname"><em>sensorInvoer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>we lopen door alle sensoren en kijken of het 0 is. En als dat zo is geven we 0 terug (dat deze niet aanwezig is). </p>
+
+</div>
+</div>
+<a id="a7659da3e55a4ace103047d32b6fa40ca" name="a7659da3e55a4ace103047d32b6fa40ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7659da3e55a4ace103047d32b6fa40ca">&#9670;&#160;</a></span>afwijkingLijn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lijnSensor::afwijkingLijn </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int *</td>          <td class="paramname"><span class="paramname"><em>sensorInvoer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>deze methode geeft de afwijking van de middelste sensor het zal een negatief getal terug geven wanneer het links zit. en positief als het er rechts van zit. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="lijn_sensor_8h_source.html">lijnSensor.h</a></li>
 <li><b>lijnSensor.cpp</b></li>
