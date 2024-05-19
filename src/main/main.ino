@@ -1,14 +1,13 @@
 #include <Wire.h>
 #include <Zumo32U4.h>
+#include "controller.h"
 
-
+controller test;
 void setup() {
-  Serial1.println("test");
+  test.handbestuur();
 }
 
 void loop() {
-  
-  Serial.println("test");
-  delay(500);
+  test.acties();
 }
 
