@@ -17,6 +17,7 @@ class motorController {
     void zetSnelheid(int,int);
     void zetMinSnelheid(int);
     void zetMaxSnelheid(int);
+    void zetDirectSnelheid(int,int);
   private:
     Zumo32U4Motors Motors;
     Zumo32U4Encoders Encoders;
