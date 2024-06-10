@@ -44,6 +44,7 @@ void loop() {
       // }
   int fout = lijnsensor.BepaalFout();
   int kleur = lijnsensor.bepaalKleur();
+
   // Serial1.println(kleur);
   motorcontroller.zetSnelheid(fout,kleur);
 }

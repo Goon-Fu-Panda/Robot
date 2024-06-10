@@ -8,15 +8,13 @@ motorController::~motorController() {
 
 }
 void motorController::zetSnelheid(int veranderingSnelheid,int kleur) {
-  // Serial1.println("snelheid:"+veranderingSnelheid);
-  // Serial.println("snelheid:"+veranderingSnelheid);
+  Serial1.println("snelheid:"+veranderingSnelheid);
+  Serial.println("snelheid:"+veranderingSnelheid);
   leftSpeed = maxSpeed + veranderingSnelheid;
   rightSpeed = maxSpeed - veranderingSnelheid;
   leftSpeed= constrain(leftSpeed,minSpeed, maxSpeed);
   rightSpeed =constrain(rightSpeed,minSpeed, maxSpeed);
-  if (kleur == -1) {
-    Motors.setSpeeds(0, 0);
-  }
+
   if (kleur == 2) {
     leftSpeed /= 2;
     rightSpeed /= 2; 
