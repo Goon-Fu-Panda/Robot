@@ -20,7 +20,7 @@ void setup() {
       
       Serial1.println(input);
       if (input == "c") {
-        lijnsensor.calibrate();
+        lijnsensor.calibrate_zelf();
         buzzer.play("C6 V1");
         tijdelijkeWaarde = true;
 
@@ -44,7 +44,7 @@ void loop() {
       // }
   int fout = lijnsensor.BepaalFout();
   int kleur = lijnsensor.bepaalKleur();
-  Serial1.println(kleur);
-  // motorcontroller.zetSnelheid(fout,kleur);
+  // Serial1.println(kleur);
+  motorcontroller.zetSnelheid(fout,kleur);
 }
 

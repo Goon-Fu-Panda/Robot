@@ -17,10 +17,10 @@ void motorController::zetSnelheid(int veranderingSnelheid,int kleur) {
   if (kleur == -1) {
     Motors.setSpeeds(0, 0);
   }
-  // if (kleur == "GROEN") {
-  //   leftSpeed /= 2;
-  //   rightSpeed /= 2; 
-  // }
+  if (kleur == 2) {
+    leftSpeed /= 2;
+    rightSpeed /= 2; 
+  }
 
   Motors.setSpeeds(leftSpeed,  rightSpeed);
   
