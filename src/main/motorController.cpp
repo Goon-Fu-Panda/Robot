@@ -1,7 +1,7 @@
 #include "WString.h"
 #include "motorController.h"
 
-motorController::motorController():Motors(),Encoders(),leftSpeed(0),rightSpeed(0),minSpeed(0),maxSpeed(200){
+motorController::motorController():Motors(),Encoders(),leftSpeed(0),rightSpeed(0),minSpeed(0),maxSpeed(400){
   Encoders.init();
 }
 motorController::~motorController() {

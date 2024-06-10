@@ -1,3 +1,4 @@
+#include "Arduino.h"
 #include "lijnSensor.h"
 
 lijnSensor::lijnSensor():lineSensors(),sensorWaardes(),laatsteError(0),laatsteErrorKleur(0) {
@@ -8,18 +9,20 @@ lijnSensor::~lijnSensor() {
 }
 int lijnSensor::BepaalFout() {
   int positie = lineSensors.readLine(sensorWaardes);
-  Serial1.print("SensorWaardes");
+  // Serial1.print("SensorWaardes");
 
-  for (int i=0;i< 5;i++) {
-      Serial1.print(sensorWaardes[i]);
-      Serial1.print(" ");
+  // for (int i=0;i< 5;i++) {
+  //     Serial1.print(sensorWaardes[i]);
+  //     Serial1.print(" ");
 
 
-  }
-  Serial1.println("");
+  // }
+  // Serial1.println("");
 
   // Our "error" is how far we are away from the center of the
   // line, which corresponds to position 2000.
+  // Serial1.print("positie:");
+  // Serial1.println(positie);
   int error = positie - 2000;
   // Get motor speed difference using proportional and derivative
   // PID terms (the integral term is generally not very useful
@@ -28,8 +31,8 @@ int lijnSensor::BepaalFout() {
   // work decently for many Zumo motor choices.  You probably
   // want to use trial and error to tune these constants for your
   // particular Zumo and line course.
-  int16_t speedDifference = error / 8 + 8 * (error - laatsteError);
-  Serial.println(speedDifference);
+  int16_t speedDifference = error / 4 + 6 * (error - laatsteError);
+  // Serial.println(speedDifference);
   laatsteError = error;
 
   return speedDifference;
@@ -39,7 +42,7 @@ void lijnSensor::calibrate(){
   // Wait 1 second and then begin automatic sensor calibration
   // by rotating in place to sweep the sensors over the line
   delay(1000);
-  for(uint16_t i = 0; i < 360; i++)
+  for(uint16_t i = 0; i < 120; i++)
   {
     if (i > 30 && i <= 90)
     {
@@ -64,12 +67,13 @@ int lijnSensor::bepaalKleur() {
 
   }
   int error = samen;
-  int kleurDifference = error / 8 + 8 * (error - laatsteErrorKleur);
+  int kleurDifference = error / 4 + 6 * (error - laatsteErrorKleur);
   laatsteErrorKleur = error;
   Serial1.print("Kleur");
   Serial1.println(kleurDifference);
-  if (kleurDifference < zwarteGrensWaarde) return 1;
-  if (kleurDifference < groenGrensWaarde) return 2;
+  kleurDifference = constrain(kleurDifference, 0, 1000);
+  if (kleurDifference > groenGrensWaarde) return 2;
+  if (kleurDifference > zwarteGrensWaarde) return 1;
   return -1;
 
 
