@@ -32,7 +32,7 @@ int lijnSensor::BepaalFout() {
   // work decently for many Zumo motor choices.  You probably
   // want to use trial and error to tune these constants for your
   // particular Zumo and line course.
-  int16_t speedDifference = error / 6 + 12 * (error - laatsteError);
+  int16_t speedDifference = error / 3 +  8 * ( error - laatsteError );
   // Serial.println(speedDifference);
   laatsteError = error;
 
@@ -81,12 +81,12 @@ void lijnSensor::calibrate_zelf(){
 
 
          // keep track of whether we see the line at all
-         if(value > 100) {
+         if(value > 50) {
              on_line = 1;
          }
   
          // only average in values that are above a noise threshold
-         if(value > 100) {
+         if(value > 50) {
              avg += (long)(value) * (i * 1000);
              sum += value;
          }

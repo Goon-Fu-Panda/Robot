@@ -12,7 +12,6 @@ Zumo32U4Buzzer buzzer;
 void setup() {
   Serial1.begin(9600);
   Serial.begin(9600);
-  bool tijdelijkeWaarde = false;
   while (true) {
     if  (0 < Serial1.available()) {
       
@@ -22,7 +21,6 @@ void setup() {
       if (input == "c") {
         lijnsensor.calibrate_zelf();
         buzzer.play("C6 V1");
-        tijdelijkeWaarde = true;
 
       }
       if (input == "b") {

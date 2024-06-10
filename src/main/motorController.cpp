@@ -1,15 +1,13 @@
 #include "WString.h"
 #include "motorController.h"
 
-motorController::motorController():Motors(),Encoders(),leftSpeed(0),rightSpeed(0),minSpeed(0),maxSpeed(400){
+motorController::motorController():Motors(),Encoders(),leftSpeed(0),rightSpeed(0),minSpeed(0),maxSpeed(300){
   Encoders.init();
 }
 motorController::~motorController() {
 
 }
 void motorController::zetSnelheid(int veranderingSnelheid,int kleur) {
-  Serial1.println("snelheid:"+veranderingSnelheid);
-  Serial.println("snelheid:"+veranderingSnelheid);
   leftSpeed = maxSpeed + veranderingSnelheid;
   rightSpeed = maxSpeed - veranderingSnelheid;
   leftSpeed= constrain(leftSpeed,minSpeed, maxSpeed);
