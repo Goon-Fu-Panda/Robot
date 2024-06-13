@@ -33,51 +33,62 @@ void setup() {
 }
 
 void loop() {
-      //   if (Serial1.read() == 's' || 'S') {
-      //     Serial1.println("bomb");
-      //     while (true) {
-      //       if (Serial1.read() == 'p' || 'P') {
-      //         break;
-      //       }
-      //       motorcontroller.zetSnelheid(0);
-      //     }
-      // }
       if (manual == true ) {
-        if (Serial1.available()) {
+        while ( !Serial.available()) {}
 
         
-        int input = Serial.read()
+        char input = Serial.read();
+        toLowerCase(input);
         switch (input) {
-        case 119:
-            motorcontroller.zetDirectSnelheid(200,200);
-          break;
-          ;
-        case 97:  
-            motorcontroller.zetDirectSnelheid(-200,200);
+          case 'w':
+              motorcontroller.zetDirectSnelheid(200,200);
+                        Serial1.println("w");
 
-          break;
-          ;
-        case 115:   
-            motorcontroller.zetDirectSnelheid(-200,-200);
+              input = 0;
+            break;
+            ;
+          case 'a':  
+              motorcontroller.zetDirectSnelheid(-200,200);
+                                    Serial1.println("a");
 
-          break;
-          ;
-        case 100:
-          motorcontroller.zetDirectSnelheid(200,-200);
+              input = 0;
 
-          break;
-          ;
-        default:
-          Serial.println();
-        ;
-        }
-        }
+            break;
+            ;
+          case 's':   
+              motorcontroller.zetDirectSnelheid(-200,-200);
+                                    Serial1.println("s");
 
+              input = 0;
+
+            break;
+            ;
+          case 'd':
+            motorcontroller.zetDirectSnelheid(200,-200);
+              input = 0;
+                                    Serial1.println("d");
+
+
+            break;
+            ;
+            case -1:Serial1.println("iets niet goed");
+          default:
+            motorcontroller.zetDirectSnelheid(200, 200);
+                        input = 0;
+
+            Serial.println(input);
+            break;
+          ;
+          }
+        
+
+      }else {
+        int fout = lijnsensor.BepaalFout();
+        int kleur = lijnsensor.bepaalKleur();
+
+        // Serial1.println(kleur);
+        motorcontroller.zetSnelheid(fout,kleur);
       }
-  int fout = lijnsensor.BepaalFout();
-  int kleur = lijnsensor.bepaalKleur();
 
-  // Serial1.println(kleur);
-  motorcontroller.zetSnelheid(fout,kleur);
 }
 

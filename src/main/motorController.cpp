@@ -29,4 +29,5 @@ void motorController::zetMaxSnelheid(int invoer) {
 }
 void motorController::zetDirectSnelheid(int left,int right) {
   Motors.setSpeeds(left, right);
+  return;
 }
