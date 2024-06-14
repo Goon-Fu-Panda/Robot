@@ -10,50 +10,34 @@ lijnSensor::~lijnSensor() {
 int lijnSensor::BepaalFout() {
 
   int positie = readLine(sensorWaardes);
-
-  // Serial1.print("SensorWaardes");
-
-  // for (int i=0;i< 5;i++) {
-  //     Serial1.print(sensorWaardes[i]);
-  //     Serial1.print(" ");
-  // }
-  // Serial1.println("");
-
-
-  // Our "error" is how far we are away from the center of the
-  // line, which corresponds to position 2000.
-  // Serial1.print("positie:");
-  // Serial1.println(positie);
+  // We willen hier een verschil hebben tussen waar we zijn.
+  // En waar we willen zijn dit doen we omdat zo de motoren sturen.
+  // we doen -2000 hier omdat de sensoren 1 = 1000 dus dan als we nummer 3 willen doen we -2000
   int error = positie - 2000;
-  // Get motor speed difference using proportional and derivative
-  // PID terms (the integral term is generally not very useful
-  // for line following).  Here we are using a proportional
-  // constant of 1/4 and a derivative constant of 6, which should
-  // work decently for many Zumo motor choices.  You probably
-  // want to use trial and error to tune these constants for your
-  // particular Zumo and line course.
+
+  /*Dit is een controller om de waardes te geen stabiliseren
+   *De waardes die nu er aan hangen zijn na testen uit geprobeerd en deze leken op timaal.
+   */
   int16_t speedDifference = error / 3 +  8 * ( error - laatsteError );
-  // Serial.println(speedDifference);
   laatsteError = error;
 
   return speedDifference;
 };
-void lijnSensor::calibrate_zelf(){
+void lijnSensor::calibrateZelf(){
   Zumo32U4Motors motors;
-  // Wait 1 second and then begin automatic sensor calibration
-  // by rotating in place to sweep the sensors over the line
+  // wacht voor een seconde om alles klaar te laten worden.
   delay(1000);
+
   for(uint16_t i = 0; i < 120; i++)
   {
-    if (i > 0 && i <= 60)
-    {
+    if (i > 0 && i <= 60){
+      // draai heen 
       motors.setSpeeds(-200, 200);
     }
-    else
-    {
+    else{
+      // draai terug 
       motors.setSpeeds(200, -200);
     }
-
     calibrate();
   }
   motors.setSpeeds(0, 0);
@@ -65,33 +49,24 @@ void lijnSensor::calibrate_zelf(){
                         // before division
      unsigned int sum; // this is for the denominator which is <= 64000
      readCalibrated(sensor_values, readMode);
-     
      avg = 0;
      sum = 0;
-  
      for(i=0;i<_numSensors;i++) {
-     
-
          int value = sensor_values[i];
                 //     Serial1.print("VALUES:");
                 // Serial1.println(value);
          if(white_line)
              value = 1000-value;
-  
-
-
          // keep track of whether we see the line at all
          if(value > 50) {
              on_line = 1;
          }
-  
          // only average in values that are above a noise threshold
          if(value > 50) {
              avg += (long)(value) * (i * 1000);
              sum += value;
          }
      }
-  
      if(!on_line)
      {
          // If it last read to the left of center, return 0.
@@ -109,20 +84,24 @@ void lijnSensor::calibrate_zelf(){
      return _lastValue;
  }
 int lijnSensor::bepaalKleur() {
+ /* De grens waardes hier onder zijn wij opgekomen door te testen.
+  * En te kijken hoe het dan werkt en welke kant beter is.
+  */
   int zwarteGrensWaarde = 400;
   int groenGrensWaarde = -1;
-  int samen =0;
-
+  int samen = 0;
   for (int i = 0;i<5;i++) {
       samen += sensorWaardes[i];
-
   }
-  
   int error = samen;
+  /* Wij nemen hier een gemiddelde van de vorige en nu om extreme osilaties.
+   * Te verkomen in de robot.
+  */
   int kleurDifference = error / 1 + 12 * (error - laatsteErrorKleur);
   laatsteErrorKleur = error;
-  // Serial1.print("Kleur");
-  // Serial1.println(kleurDifference);
+  /* Hier worden de kleuren gecontroleerd en wordt 1 zwart of 2 groen en 0 is onbekend terug gegeven,
+   * 
+  */
   if (kleurDifference > zwarteGrensWaarde) return 1;
   if (kleurDifference > groenGrensWaarde) return 2;
   return 0;
